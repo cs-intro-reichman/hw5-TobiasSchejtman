@@ -62,7 +62,7 @@ public class MyString {
                 return false;
             }
     
-            str2 = str2.replaceFirst(cs, "");
+            str2 = str2.replaceFirst(c, "");
         }
     
         return true;
@@ -82,7 +82,7 @@ public class MyString {
        
         for (int i = 0; i < str.length(); i++) {
             
-            result += str.chartAt(i);
+            result += str.charAt(i);
 
             if (i < str.length() - 1) {
                 result += " ";
