@@ -62,7 +62,7 @@ public class MyString {
                 return false;
             }
     
-            str2 = str2.replaceFirst(c, "");
+            str2 = str2.replaceFirst(Character.toString(c), "");
         }
     
         return true;
