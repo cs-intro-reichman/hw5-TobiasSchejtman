@@ -71,6 +71,8 @@ public class Scrabble {
 
         }
 
+		score *= word.length();
+
 		if (word.length() == HAND_SIZE) {
 			score += 50;
 		}
@@ -137,7 +139,7 @@ public class Scrabble {
 			}
 			
 			int wordScore = wordScore(input);
-			score += wordScore(input);
+			score += wordScore;
 
 			System.out.println(input + " earned " + wordScore + " points. Score: " + score + " points.");
 
