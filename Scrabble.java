@@ -89,6 +89,7 @@ public class Scrabble {
 	public static String createHand() {
 
 		String hand = "";
+		
 		for (int i = 0; i < HAND_SIZE - 2; i++) {
 		
 		int randomNumber = (int) (Math.random() * (122 - 97 + 1)) + 97;
@@ -124,9 +125,25 @@ public class Scrabble {
 			// non-whitespace characters. Whitespace is either space characters, or  
 			// end-of-line characters.
 			String input = in.readString();
-			//// Replace the following break statement with code
-			//// that completes the hand playing loop
-			break;
+			
+			if (input.equals(".")) {
+				break;
+			}
+
+			if (!isWordInDictionary(input)) {
+				System.out.println("No such word in the dictionary. Try again.");
+
+            	continue;
+			}
+			
+			int wordScore = wordScore(input);
+			score += wordScore(input);
+
+			System.out.println(input + " earned " + wordScore + " points. Score: " + score + " points.");
+
+			hand = MyString.remove(hand, input);
+
+		
 		}
 		if (hand.length() == 0) {
 	        System.out.println("Ran out of letters. Total score: " + score + " points");
