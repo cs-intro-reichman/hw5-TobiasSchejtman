@@ -107,7 +107,7 @@ public class MyString {
         
         String result = "";
         
-        for (int i = 0; i < n) {
+        for (int i = 0; i < n; i++) {
 
             int randomNumber = (int) (Math.random() * (122 - 97 + 1)) + 97;
             char letter = (char) randomNumber; 
